@@ -1,11 +1,6 @@
-module Hour.I18n exposing
-    ( Language
-    , en
-    )
+module Hour.I18n exposing (en)
 
 {-| This module declares all supported languages and their formatting information.
-
-@docs Language
 
 
 ## Supported languages
@@ -14,13 +9,7 @@ module Hour.I18n exposing
 
 -}
 
-
-{-| Opaque data structure that stores formatting information about a language.
--}
-type alias Language =
-    { am : String
-    , pm : String
-    }
+import Hour exposing (Language)
 
 
 {-| en-US support

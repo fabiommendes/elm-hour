@@ -3,7 +3,7 @@ module Hour exposing
     , now, time, fromParts, fromPosix, fromIsoString, fromMillis, fromSeconds
     , hours, minutes, seconds, millis, parts
     , toIsoString, toMillis, toSeconds
-    , format, formatWithLanguage
+    , format, Language, formatWithLanguage
     , Unit(..), add, diff
     , Interval(..), ceiling, floor, range
     , compare, isBetween, min, max, clamp
@@ -41,7 +41,7 @@ represent both dates and times.
 
 # Formatting
 
-@docs format, formatWithLanguage
+@docs format, Language, formatWithLanguage
 
 
 # Arithmetic
@@ -65,7 +65,6 @@ represent both dates and times.
 
 -}
 
-import Hour.I18n exposing (Language)
 import Json.Decode as D
 import Json.Encode as E
 import Pattern exposing (Token(..))
@@ -82,6 +81,14 @@ type Time
         , seconds : Int
         , millis : Int
         }
+
+
+{-| Represent a supported language
+-}
+type alias Language =
+    { am : String
+    , pm : String
+    }
 
 
 
